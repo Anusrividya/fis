@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("https://png.pngtree.com/background/20240108/original/pngtree-autumn-forest-road-adorned-with-vibrant-orange-foliage-photo-picture-image_7174555.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            max-width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: black;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        label {
+            color: black;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .full-width {
+            grid-column: span 2;
+        }
+        .btnstyle {
+            background-color: rgb(220, 135, 235);
+            color: black;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        .gender-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .gender-container input {
+            margin: 0 5px 0 0;
+        }
+        .account-link {
+            display: block;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form method="post">
+            <div>
+                <label for="fid">Employee Id:</label>
+                <input placeholder="Enter id" type="text" id="fid" name="fid" required/>
+            </div>
+            <div>
+                <label for="fname">Name:</label>
+                <input placeholder="Enter name" type="text" id="fname" name="fname" required/>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input placeholder="Enter email" type="email" id="email" name="email" required/>
+            </div>
+            <div>
+                <label for="dept">Department:</label>
+                <input placeholder="Enter department" type="text" id="dept" name="dept" required/>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input placeholder="Enter password" type="password" id="password" name="password" required/>
+            </div>
+            <div>
+                <label for="confpassword">Confirm Password:</label>
+                <input placeholder="Confirm password" type="password" id="confpassword" name="confpassword" required/>
+            </div>
+            <div class="full-width">
+                <label for="gender">Gender:</label>
+                <div class="gender-container">
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female" required> Female</label>
+                    <label><input type="radio" name="gender" value="prefer_not_to_say" required> Prefer not to say</label>
+                </div>
+            </div>
+            <div class="full-width">
+                <button class="btnstyle" type="submit">Create Account</button>
+            </div>
+            <a class="account-link" href="{{url_for('login')}}" target="_blank">Already Have an Account?</a>
+        </form>
+    </div>
+</body>
+</html>
